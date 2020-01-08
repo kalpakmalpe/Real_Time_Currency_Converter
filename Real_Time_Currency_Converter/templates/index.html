@@ -1,0 +1,135 @@
+<html>
+    <head>
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">       
+         -->
+    <style>
+        body {
+            
+              margin:0;
+            padding:0;
+            }
+        .bg{
+            width:100%;
+            height:auto;
+            background-color: lightblue;
+            padding-bottom:25px;
+
+        }
+        h1{
+            padding:4%;
+        }
+        h3{
+               text-decoration: underline;
+               font-size:25px;
+        }
+        .team{
+            float:right;
+            width:250px;
+            padding:20px;
+            text-align:center;
+            background-color:lightblue;
+            margin-right:10%;
+            
+        }
+      
+        .cur_detail{
+            float:left;
+            margin:0px 25px;
+        }
+        
+        
+        a{
+            text-decoration:none;
+            color:black;
+        }
+        </style>
+        </head>
+    <body bgcolor="red">
+      <div class="bg">
+                  <h1 align="center">Real time currency converter</h1>
+
+     <center>
+    <form class="form-inline" method="POST" action="{{ url_for('test') }}">
+      <div class="form-group" >
+        <div class="input-group">
+           <b> <span class="input-group-addon">Select Currrency</span></b>
+                <select name="comp_select" class="selectpicker form-control">
+                  {% for o in data %}
+                  <option value="{{ o.1}}">{{ o.0}}</option>
+                   {% endfor %}
+                </select>
+        </div>
+         <p>
+          <tr>
+              <td><input type='text' name='cs' id='cs' value="{{cs}}" Placeholder="Today's Rate"></td>
+              
+              </tr>
+          
+       <p> <button type="submit" class="btn btn-default">Go</button>
+        </div>
+         
+        
+    </form>
+    
+    
+    
+ <form class="form-inline" method="POST" action="{{ url_for('test2') }}">
+             <tr>
+                 <td><b>Your Number:</b>&nbsp&nbsp<input type='text' name='num' value='{{nums}}' placeholder='Numbers to be Convert'></td>
+              
+        </tr>
+         
+        <p>
+         <p>
+        <tr>
+           <b> <td>Conversion:</b>&nbsp&nbsp<input type='text' name='con' value="{{convs}}" placeholder='Your Conversion' ></td>
+              
+        </tr>
+
+        
+       <p> <button type="submit" class="btn btn-default">Convert</button>
+        <!--<input type="submit"   Value='Covert'>  -->
+        
+        
+        
+    </form>    
+    
+        </center>
+        <div class="team">
+            <h3> Team Member</h3>
+            <p><a href="http://www.kalpakmalpe.rf.gd" target="_blank">Kalpak Malpe</a></p>
+            <p><a href="http://www.harshadpatil.rf.gd" target="_blank">Harshad Patil</a></p>
+            <p><a href="http://www.shubhamyeole.rf.gd" target="_blank">Shubham Yeole</a></p>
+            <p><a href="http://www.mayurkasture.epizy.com" target="_blank">Mayur Kasture</a></p>
+
+
+        </div>
+        <div class="right">
+        <div class="cur_detail">
+                <h5>GBP=POUNDS</h5>
+                <h5>USD=US DOLLAR</h5>
+                <h5>EUR=EUROS</h5>
+                <h5>JPY=JAPANESE YEN</h5>
+                <h5>AUD=AUSTRALIAN DOLLAR</h5>
+                <h5>BRL=BRAZILIAN REAL</h5>
+                <h5>CAD=CANADIAN DOLLAR</h5>
+                <h5>CHF=SWIS FRANC </h5>
+                         <h5>CNY=Chinese Yuan</h5>
+
+         </div>
+        <div class="cur_details2">
+            <h5>CNY=Chinese Yuan</h5>
+                <h5>NOK=NORWEIGAN KRONE</h5>
+                <h5>QAR=QATARI RIAL</h5>
+                <h5>ZAR=SOUTH AFRICA RAND</h5>
+                <h5>SEK=SEDISH KRONA</h5>
+                <h5>HUF=HUNGARIAN FORINT</h5>
+                <h5>HKD=HONG KONG DOLLAR</h5>
+                <h5>SGD=SINGAPORE DOLLAR</h5>
+                <h5>MXN=MEXICAN PESO</h5>
+                
+            </div>
+        </div>
+    </body>   
+    
+</html>
